@@ -18,7 +18,7 @@ repo init -u https://github.com/LineageOS/android.git -b lineage-22.0 --git-lfs
 git clone https://github.com/Kou-Yeager/android_device_xiaomi_mojito.git --depth 1 -b lineage-22 device/xiaomi/mojito
 
 # cloning kernel tree
-git clone https://github.com/pyo3377/kxm --depth 1 -b inline-rom kernel/xiaomi/mojito
+git clone https://github.com/Kou-Yeager/android_kernel_xiaomi_mojito.git --depth 1 -b inline-rom kernel/xiaomi/mojito
 
 # cloning vendor tree
 git clone https://github.com/Kou-Yeager/android_vendor_xiaomi_mojito.git --depth 1 -b lineage-22 vendor/xiaomi/mojito
