@@ -9,13 +9,13 @@ rm -rf kernel/xiaomi/mojito
 rm -rf vendor/xiaomi/mojito
 
 # Initialize ROM manifest
-repo init -u https://github.com/2by2-Project/android.git -b 15 --git-lfs
+repo init -u https://github.com/RisingTechOSS/android -b fifteen --git-lfs
 
 # Sync the repo with force to ensure a clean sync
 /opt/crave/resync.sh
 
 # cloning device tree
-git clone https://github.com/Kou-Yeager/android_device_xiaomi_mojito.git --depth 1 -b 2by2 device/xiaomi/mojito
+git clone https://github.com/Kou-Yeager/android_device_xiaomi_mojito.git --depth 1 -b lineage-22 device/xiaomi/mojito
 
 # cloning kernel tree
 git clone https://github.com/Kou-Yeager/android_kernel_xiaomi_mojito.git --depth 1 -b inline-rom kernel/xiaomi/mojito
@@ -30,4 +30,7 @@ git clone https://gitlab.com/Sepidermn/android_vendor_xiaomi_mojito-leicacamera.
 . build/envsetup.sh
 
 # Choose the target device
-brunch mojito userdebug
+riseup mojito userdebug
+
+# full building
+rise b
