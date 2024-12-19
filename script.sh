@@ -23,9 +23,6 @@ git clone https://github.com/Kou-Yeager/android_kernel_xiaomi_mojito.git --depth
 # cloning vendor tree
 git clone https://github.com/Kou-Yeager/android_vendor_xiaomi_mojito.git --depth 1 -b lineage-22 vendor/xiaomi/mojito
 
-# add leica
-git clone https://gitlab.com/Sepidermn/android_vendor_xiaomi_mojito-leicacamera.git -b main vendor/xiaomi/mojito-leicacamera
-
 # Set up th build environment
 . build/envsetup.sh
 
