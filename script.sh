@@ -34,7 +34,7 @@ git clone https://gitlab.com/Sepidermn/android_vendor_xiaomi_sm6150-common.git -
 git clone https://github.com/zeydann/android_hardware_xiaomi.git --depth 1 -b mojito hardware/xiaomi
 
 # add modify
- git clone https://github.com/Kou-Yeager/android_frameworks_native.git --depth 1 -b 15 frameworks/native
+ git clone https://github.com/HinohArata/frameworks_native.git --depth 1 -b axion-qpr2 frameworks/native
 
 # Export
 export SELINUX_IGNORE_NEVERALLOWS=true
