@@ -11,14 +11,14 @@ rm -rf vendor/xiaomi/sm6150-common
 rm -rf hardware/xiaomi
 
 # Initialize ROM manifest
-repo init -u https://github.com/zeydann/manifest.git -b 15 --git-lfs
+repo init -u https://github.com/The-Pixel-Project/manifest -b 15 --git-lfs
 
 # Sync the repo with force to ensure a clean sync
 /opt/crave/resync.sh
 
 # cloning device tree
-git clone https://github.com/zeydann/android_device_xiaomi_mojito.git --depth 1 -b kmd device/xiaomi/mojito
-git clone https://github.com/zeydann/android_device_xiaomi_sm6150-common.git --depth 1 -b kmd device/xiaomi/sm6150-common
+git clone https://github.com/zeydann/android_device_xiaomi_mojito.git --depth 1 -b tpp device/xiaomi/mojito
+git clone https://github.com/zeydann/android_device_xiaomi_sm6150-common.git --depth 1 -b qpr2 device/xiaomi/sm6150-common
 
 # cloning kernel tree
 git clone https://github.com/zeydann/kernel_xiaomi_mojito.git --depth 1 -b 15 kernel/xiaomi/mojito
@@ -28,7 +28,7 @@ git clone https://gitlab.com/Sepidermn/android_vendor_xiaomi_mojito.git --depth 
 git clone https://gitlab.com/Sepidermn/android_vendor_xiaomi_sm6150-common.git --depth 1 -b 15 vendor/xiaomi/sm6150-common
 
 # cloning hardware tree
-git clone https://github.com/zeydann/android_hardware_xiaomi.git --depth 1 -b qpr1 hardware/xiaomi
+git clone https://github.com/zeydann/android_hardware_xiaomi.git --depth 1 -b mojito hardware/xiaomi
 
 # Export
 export SELINUX_IGNORE_NEVERALLOWS=true
@@ -37,7 +37,7 @@ export SELINUX_IGNORE_NEVERALLOWS=true
 . build/envsetup.sh
 
 # Choose the target device
-lunch komodo_mojito-ap4a-userdebug
+lunch aosp_mojito-bp1a-userdebug
 
 # full target
-mka komodo
+make bacon
