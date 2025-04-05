@@ -16,6 +16,9 @@ repo init -u https://github.com/The-Pixel-Project/manifest -b 15 --git-lfs
 # Sync the repo with force to ensure a clean sync
 /opt/crave/resync.sh
 
+# remove build/soong
+rm -rf build/soong
+
 # cloning device tree
 git clone https://github.com/zeydann/android_device_xiaomi_mojito.git --depth 1 -b tpp device/xiaomi/mojito
 git clone https://github.com/zeydann/android_device_xiaomi_sm6150-common.git --depth 1 -b qpr2 device/xiaomi/sm6150-common
@@ -29,6 +32,9 @@ git clone https://gitlab.com/Sepidermn/android_vendor_xiaomi_sm6150-common.git -
 
 # cloning hardware tree
 git clone https://github.com/zeydann/android_hardware_xiaomi.git --depth 1 -b mojito hardware/xiaomi
+
+# add build/soong
+git clone https://github.com/zeydann/build_soong.git --depth 1 -b 15 build/soong
 
 # Export
 export SELINUX_IGNORE_NEVERALLOWS=true
