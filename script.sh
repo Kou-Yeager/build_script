@@ -19,6 +19,9 @@ repo init -u https://github.com/The-Pixel-Project/manifest -b 15 --git-lfs
 # remove build/soong
 rm -rf build/soong
 
+# remove frameworks/native
+rm -rf frameworks/native
+
 # cloning device tree
 git clone https://github.com/zeydann/android_device_xiaomi_mojito.git --depth 1 -b tpp device/xiaomi/mojito
 git clone https://github.com/zeydann/android_device_xiaomi_sm6150-common.git --depth 1 -b qpr2 device/xiaomi/sm6150-common
@@ -35,6 +38,9 @@ git clone https://github.com/zeydann/android_hardware_xiaomi.git --depth 1 -b mo
 
 # add build/soong
 git clone https://github.com/zeydann/build_soong.git --depth 1 -b 15 build/soong
+
+# add frameworks/native
+git clone https://github.com/zeydann/frameworks_native.git --depth 1 -b 15 frameworks/native
 
 # Export
 export SELINUX_IGNORE_NEVERALLOWS=true
