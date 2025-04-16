@@ -16,6 +16,9 @@ repo init -u https://github.com/AxionAOSP/android.git -b lineage-22.2 --git-lfs
 # Sync the repo with force to ensure a clean sync
 /opt/crave/resync.sh
 
+# remove frameworks/native
+rm -rf frameworks/native
+
 # remove build/soong
 rm -rf build/soong
 
@@ -35,6 +38,9 @@ git clone https://github.com/zeydann/android_hardware_xiaomi.git --depth 1 -b mo
 
 # add build/soong
 git clone https://github.com/zeydann/android_build_soong-axion.git -b lineage-22.2 build/soong
+
+# add frameworks/native
+git clone https://github.com/zeydann/frameworks_native-axion.git -b 15 frameworks/native
 
 # Export
 export SELINUX_IGNORE_NEVERALLOWS=true
