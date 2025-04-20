@@ -19,9 +19,6 @@ repo init -u https://github.com/AxionAOSP/android.git -b lineage-22.2 --git-lfs
 # remove frameworks/native
 rm -rf frameworks/native
 
-# remove build/soong
-rm -rf build/soong
-
 # cloning device tree
 git clone https://github.com/zeydann/android_device_xiaomi_mojito.git --depth 1 -b axion device/xiaomi/mojito
 git clone https://github.com/zeydann/android_device_xiaomi_sm6150-common.git --depth 1 -b axion device/xiaomi/sm6150-common
@@ -35,9 +32,6 @@ git clone https://gitlab.com/Sepidermn/android_vendor_xiaomi_sm6150-common.git -
 
 # cloning hardware tree
 git clone https://github.com/zeydann/android_hardware_xiaomi.git --depth 1 -b mojito hardware/xiaomi
-
-# add build/soong
-git clone https://github.com/zeydann/android_build_soong-axion.git -b lineage-22.2 build/soong
 
 # add frameworks/native
 git clone https://github.com/zeydann/frameworks_native-axion.git -b 15 frameworks/native
