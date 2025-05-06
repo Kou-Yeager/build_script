@@ -22,4 +22,4 @@ git clone https://github.com/zeydann/frameworks_native-axion.git -b 15 framework
 axion mojito va
 
 # full target
-brunch mojito userdebug
+brunch mojito user
