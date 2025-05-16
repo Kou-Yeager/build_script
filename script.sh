@@ -3,50 +3,26 @@
 # Remove the local manifests directory if it exists (cleanup before repo initialization)
 rm -rf .repo/local_manifests/
 
-# remove device tree
-rm -rf device/xiaomi/mojito
-rm -rf device/xiaomi/sm6150-common
-rm -rf kernel/xiaomi/mojito
-rm -rf vendor/xiaomi/sm6150-common
-rm -rf hardware/xiaomi
-
 # Initialize ROM manifest
-repo init -u https://github.com/AxionAOSP/android.git -b lineage-22.2 --git-lfs
+repo init -u https://github.com/zeydann/android-cr.git -b 13.0 --git-lfs
 
 # Sync the repo with force to ensure a clean sync
 /opt/crave/resync.sh
 
-# remove frameworks/native
- rm -rf frameworks/native
+# Device tree
+git clone https://github.com/Kou-Yeager/android_device_xiaomi_mojito-13.git -b 13 device/xiaomi/mojito
 
-# cloning device tree
-git clone https://github.com/zeydann/android_device_xiaomi_mojito.git --depth 1 -b axion device/xiaomi/mojito
-git clone https://github.com/zeydann/android_device_xiaomi_sm6150-common.git --depth 1 -b axion device/xiaomi/sm6150-common
+# Kernel tree
+git clone https://github.com/device-xti/android_kernel_xiaomi_mojito.git -b thirteen kernel/xiaomi/mojito
 
-# cloning kernel tree
-git clone https://github.com/zeydann/kernel_xiaomi_mojito.git --depth 1 -b 15 kernel/xiaomi/mojito
-
-# cloning vendor tree
-git clone https://gitlab.com/Sepidermn/android_vendor_xiaomi_mojito.git --depth 1 -b 15 vendor/xiaomi/mojito
-git clone https://gitlab.com/Sepidermn/android_vendor_xiaomi_sm6150-common.git --depth 1 -b 15 vendor/xiaomi/sm6150-common
-
-# cloning hardware tree
-git clone https://github.com/zeydann/android_hardware_xiaomi.git --depth 1 -b mojito hardware/xiaomi
-
-# add modify
- git clone https://github.com/HinohArata/frameworks_native.git --depth 1 -b axion-qpr2 frameworks/native
-
-# Export
-export SELINUX_IGNORE_NEVERALLOWS=true
+# Vendor tree
+git clone https://github.com/FerryAr/vendor-xiaomi-mojito.git -b thirteen vendor/xiaomi/mojito
 
 # Set up th build environment
 . build/envsetup.sh
 
-# keys
-gk -s
-
 # Choose the target device
-axion mojito va
+lunch lineage_mojito-userdebug
 
 # full target
-brunch mojito userdebug
+m bacon
