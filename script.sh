@@ -3,7 +3,6 @@
 
 # Remove the local manifests directory if it exists (cleanup before repo initialization)
 rm -rf .repo/local_manifests/
-rm -rf device/xiaomi/mojito
 
 # Initialize ROM manifest
 #repo init -u https://github.com/PixelExperience-LEGACY-edition/manifest.git -b thirteen-plus --depth=1 --git-lfs
@@ -12,13 +11,16 @@ rm -rf device/xiaomi/mojito
 #/opt/crave/resync.sh
 
 # Device tree
-git clone https://github.com/Zeydann/device_xiaomi_mojito-13.git -b 13 device/xiaomi/mojito
+#git clone https://github.com/Zeydann/device_xiaomi_mojito-13.git -b 13 device/xiaomi/mojito
 
 # Kernel tree
 #git clone https://github.com/device-xti/android_kernel_xiaomi_mojito.git -b thirteen kernel/xiaomi/mojito
 
 # Vendor tree
 #git clone https://github.com/FerryAr/vendor-xiaomi-mojito.git -b thirteen vendor/xiaomi/mojito
+
+# Leica
+git clone --depth=1 https://gitlab.com/pnplusplus/android_vendor_xiaomi_mojito-leicacamera vendor/xiaomi/mojito-leicacamera
 
 # Set up th build environment
 . build/envsetup.sh
