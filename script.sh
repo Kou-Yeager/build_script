@@ -19,8 +19,8 @@ rm -rf .repo/local_manifests/
 # Vendor tree
 #git clone https://github.com/FerryAr/vendor-xiaomi-mojito.git -b thirteen vendor/xiaomi/mojito
 
-# Leica
-git clone --depth=1 https://gitlab.com/pnplusplus/android_vendor_xiaomi_mojito-leicacamera vendor/xiaomi/mojito-leicacamera
+# MiuiCamera
+git clone https://gitlab.com/Sepidermn/vendor-xiaomi-mojito-miuicamera.git --depth=1 -b thirteen vendor/xiaomi/mojito-miuicamera.git
 
 # Set up th build environment
 . build/envsetup.sh
