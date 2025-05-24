@@ -20,7 +20,7 @@ git clone https://github.com/device-xti/android_kernel_xiaomi_mojito.git -b thir
 git clone https://github.com/FerryAr/vendor-xiaomi-mojito.git -b thirteen vendor/xiaomi/mojito
 
 # MiuiCamera
-git clone https://gitlab.com/Sepidermn/vendor-xiaomi-mojito-miuicamera.git -b thirteen vendor/xiaomi/mojito-miuicamera.git
+git clone https://gitlab.com/Sepidermn/vendor-xiaomi-mojito-miuicamera.git -b thirteen vendor/xiaomi/mojito-miuicamera
 
 # Set up th build environment
 . build/envsetup.sh
