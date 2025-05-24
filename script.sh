@@ -5,28 +5,28 @@
 rm -rf .repo/local_manifests/
 
 # Initialize ROM manifest
-#repo init -u https://github.com/PixelExperience-LEGACY-edition/manifest.git -b thirteen-plus --depth=1 --git-lfs
+repo init -u https://github.com/PixelExperience-LEGACY-edition/manifest.git -b thirteen-plus --depth=1 --git-lfs
 
 # Sync the repo with force to ensure a clean sync
-#/opt/crave/resync.sh
+/opt/crave/resync.sh
 
 # Device tree
-#git clone https://github.com/Zeydann/device_xiaomi_mojito-13.git -b 13 device/xiaomi/mojito
+git clone https://github.com/Zeydann/device_xiaomi_mojito-13.git -b pe device/xiaomi/mojito
 
 # Kernel tree
-#git clone https://github.com/device-xti/android_kernel_xiaomi_mojito.git -b thirteen kernel/xiaomi/mojito
+git clone https://github.com/device-xti/android_kernel_xiaomi_mojito.git -b thirteen kernel/xiaomi/mojito
 
 # Vendor tree
-#git clone https://github.com/FerryAr/vendor-xiaomi-mojito.git -b thirteen vendor/xiaomi/mojito
+git clone https://github.com/FerryAr/vendor-xiaomi-mojito.git -b thirteen vendor/xiaomi/mojito
 
 # MiuiCamera
-git clone https://gitlab.com/Sepidermn/vendor-xiaomi-mojito-miuicamera.git --depth=1 -b thirteen vendor/xiaomi/mojito-miuicamera.git
+git clone https://gitlab.com/Sepidermn/vendor-xiaomi-mojito-miuicamera.git -b thirteen vendor/xiaomi/mojito-miuicamera.git
 
 # Set up th build environment
 . build/envsetup.sh
 
 # Choose the target device
-lunch aosp_mojito-userdebug
+lunch aosp_mojito-user
 
 # full target
 mka bacon
