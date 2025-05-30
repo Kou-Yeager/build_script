@@ -4,7 +4,7 @@
 rm -rf .repo/local_manifests/
 
 # Initialize ROM manifest
-repo init -u https://github.com/zeydann/android-cr.git -b 13.0 --git-lfs
+repo init -u https://github.com/Zeydann/android-cr.git -b 13.0 --git-lfs
 
 # Sync the repo with force to ensure a clean sync
 /opt/crave/resync.sh
