@@ -10,6 +10,12 @@ repo init -u https://github.com/PixelExperience-LEGACY-edition/manifest.git -b t
 # Sync the repo with force to ensure a clean sync
 /opt/crave/resync.sh
 
+# remove fwb
+rm -rf frameworks/base
+
+# add fwb
+git clone https://github.com/Zeydann/frameworks_base-pe.git --depth=1 -b 13 frameworks/base
+
 # Device tree
 git clone https://github.com/Zeydann/device_xiaomi_mojito-13.git -b pe device/xiaomi/mojito
 
@@ -26,7 +32,7 @@ git clone https://gitlab.com/Sepidermn/vendor-xiaomi-mojito-miuicamera.git -b th
 . build/envsetup.sh
 
 # Choose the target device
-lunch aosp_mojito-user
+lunch aosp_mojito-userdebug
 
 # full target
 mka bacon
