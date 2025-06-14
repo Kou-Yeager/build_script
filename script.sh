@@ -5,7 +5,7 @@
 rm -rf .repo/local_manifests/
 
 # Initialize ROM manifest
-repo init -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs
+repo init -u https://github.com/BlueOS/android.git -b lineage-20.0 --git-lfs
 
 # Sync the repo with force to ensure a clean sync
 /opt/crave/resync.sh
