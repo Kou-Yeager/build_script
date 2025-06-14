@@ -5,25 +5,10 @@
 rm -rf .repo/local_manifests/
 
 # Initialize ROM manifest
-#repo init -u https://github.com/PixelExperience-LEGACY-edition/manifest.git -b thirteen-plus --depth=1 --git-lfs
+repo init -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs
 
 # Sync the repo with force to ensure a clean sync
-#/opt/crave/resync.sh
-
-# remove fwb
-rm -rf frameworks/base
-
-# add fwb
-git clone https://github.com/Zeydann/frameworks_base-pe.git --depth=1 -b wip frameworks/base
-
-# Device tree
-#git clone https://github.com/Zeydann/device_xiaomi_mojito-13.git -b pe device/xiaomi/mojito
-
-# Kernel tree
-#git clone https://github.com/device-xti/android_kernel_xiaomi_mojito.git -b thirteen kernel/xiaomi/mojito
-
-# Vendor tree
-#git clone https://github.com/FerryAr/vendor-xiaomi-mojito.git -b thirteen vendor/xiaomi/mojito
+/opt/crave/resync.sh
 
 # MiuiCamera
 #git clone https://gitlab.com/Sepidermn/vendor-xiaomi-mojito-miuicamera.git -b thirteen vendor/xiaomi/mojito-miuicamera
@@ -32,7 +17,4 @@ git clone https://github.com/Zeydann/frameworks_base-pe.git --depth=1 -b wip fra
 . build/envsetup.sh
 
 # Choose the target device
-lunch aosp_mojito-userdebug
-
-# full target
-mka bacon
+brunch mojito userdebug
