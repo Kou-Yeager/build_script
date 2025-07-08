@@ -3,18 +3,19 @@
 
 # Remove the local manifests directory if it exists (cleanup before repo initialization)
 rm -rf .repo/local_manifests/
+rm -rf prebuilts/clang/host/linux-x86
 
 # Initialize ROM manifest
-repo init -u https://github.com/BlueOS/android.git -b lineage-20.0 --git-lfs
+repo init -u https://github.com/DerpFest-AOSP/android_manifest.git -b 16 --git-lfs
 
 # Sync the repo with force to ensure a clean sync
 /opt/crave/resync.sh
-
-# MiuiCamera
-#git clone https://gitlab.com/Sepidermn/vendor-xiaomi-mojito-miuicamera.git -b thirteen vendor/xiaomi/mojito-miuicamera
 
 # Set up th build environment
 . build/envsetup.sh
 
 # Choose the target device
-brunch mojito userdebug
+lunch lineage_mojito-bp2a-userdebug
+
+# full target
+mka derp
