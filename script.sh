@@ -6,7 +6,7 @@ rm -rf .repo/local_manifests/
 rm -rf prebuilts/clang/host/linux-x86
 
 # Initialize ROM manifest
-repo init -u https://github.com/DerpFest-AOSP/android_manifest.git -b 16 --git-lfs
+repo init -u https://github.com/WitAqua/manifest.git -b 16.0 --git-lfs
 
 # Sync the repo with force to ensure a clean sync
 /opt/crave/resync.sh
@@ -15,7 +15,4 @@ repo init -u https://github.com/DerpFest-AOSP/android_manifest.git -b 16 --git-l
 . build/envsetup.sh
 
 # Choose the target device
-lunch lineage_mojito-bp2a-userdebug
-
-# full target
-mka derp
+brunch mojito userdebug
