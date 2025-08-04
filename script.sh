@@ -6,16 +6,19 @@ rm -rf .repo/local_manifests/
 rm -rf prebuilts/clang/host/linux-x86
 
 # Initialize ROM manifest
-repo init -u https://github.com/Lunaris-AOSP/android -b 16 --git-lfs
+repo init -u https://github.com/RisingOS-Revived/android -b sixteen --git-lfs
 
 # Sync the repo with force to ensure a clean sync
 /opt/crave/resync.sh
 
 # Set up th build environment
-. b*/env*
+. build/envsetup.sh
 
 # Choose the target device
-lunch lineage_mojito-bp2a-userdebug
+riseup mojito user
 
-# full target
-m lunaris
+# keys
+gk -s
+
+# Build the ROM (use mka bacon for a full build)
+rise b
