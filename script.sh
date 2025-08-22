@@ -15,7 +15,7 @@ repo init -u https://github.com/RisingOS-Revived/android -b sixteen --git-lfs
 . build/envsetup.sh
 
 # Choose the target device
-riseup mojito user
+riseup mojito userdebug
 
 # keys
 gk -s
