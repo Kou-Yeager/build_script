@@ -2,32 +2,25 @@
 
 # Remove the local manifests directory if it exists (cleanup before repo initialization)
 rm -rf .repo/local_manifests/
-
-# remove device tree
-rm -rf device/xiaomi/mojito
-rm -rf kernel/xiaomi/mojito
-rm -rf vendor/xiaomi/mojito
+rm -rf prebuilts/clang/host/linux-x86
 
 # Initialize ROM manifest
-repo init -u https://github.com/PixelExperience-LEGACY-edition/manifest.git -b thirteen-plus --depth=1 --git-lfs
+repo init -u https://github.com/ProjectMatrixx/android.git -b 15.0 --git-lfs
 
 # Sync the repo with force to ensure a clean sync
 /opt/crave/resync.sh
 
-# cloning device tree
-git clone https://github.com/Kou-Yeager/device_xiaomi_mojito.git --depth 1 -b 13 device/xiaomi/mojito
+# remove frameworks/native
+rm -rf frameworks/native
 
-# cloning kernel tree
-git clone https://github.com/OLIVE-SYX/kernel_xiaomi_mojito.git --depth 1 -b 13 kernel/xiaomi/mojito
+# add modify
+git clone https://github.com/Zeydann/android_frameworks_native-matrix.git -b 15 frameworks/native
 
-# cloning vendor tree
-git clone https://github.com/OLIVE-SYX/vendor_xiaomi_mojito.git --depth 1 -b 13 vendor/xiaomi/mojito
+# leica
+#git clone --depth=1 https://gitlab.com/romgharti/android_vendor_xiaomi_mojito-leicacamera.git -b main vendor/xiaomi/mojito-leicacamera
 
 # Set up th build environment
 . build/envsetup.sh
 
-# Choose the target device
-lunch aosp_mojito-userdebug
-
-# Build the code
-mka bacon
+# full target
+brunch mojito user
