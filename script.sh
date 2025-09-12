@@ -6,22 +6,19 @@ rm -rf .repo/local_manifests/
 rm -rf prebuilts/clang/host/linux-x86
 
 # Initialize ROM manifest
-repo init -u https://github.com/Lunaris-AOSP/android -b 16 --git-lfs
+repo init -u https://github.com/crdroid-13-fork/android.git -b 13.0 --git-lfs
 
 # Sync the repo with force to ensure a clean sync
 /opt/crave/resync.sh
 
-# remove
-rm -rf packages/apps/Settings
-
-# add
-git clone https://github.com/Kou-Yeager/packages_apps_Settings.git -b 16 packages/apps/Settings
+# Leica
+git clone --depth=1 https://gitlab.com/pnplusplus/android_vendor_xiaomi_mojito-leicacamera vendor/xiaomi/mojito-leicacamera
 
 # Set up th build environment
-. b*/env*
+. build/envsetup.sh
 
 # Choose the target device
-lunch lineage_mojito-bp2a-userdebug
+lunch lineage_mojito-userdebug
 
 # full target
-m lunaris
+m bacon
